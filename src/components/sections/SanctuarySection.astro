@@ -14,13 +14,13 @@ const { lang, sanctuaries } = Astro.props;
 const ui = getUI(lang);
 ---
 
-<section class="w-full bg-background py-space-xl px-6 lg:px-16 relative" id="sanctuaries">
+<section class="w-full bg-background py-[var(--section-y)] px-6 lg:px-16 relative" id="sanctuaries">
   <div class="max-w-container mx-auto">
     <div
       class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg border-b border-outline-variant/30 pb-6 reveal-node"
     >
       <div>
-        <span class="font-sans text-xs uppercase tracking-[0.2em] text-secondary font-semibold">
+        <span class="font-sans text-[11px] uppercase tracking-[0.26em] text-[var(--gold-text)] font-normal">
           {ui.section.sanctuariesEyebrow}
         </span>
         <h2 class="font-display text-2xl md:text-4xl text-on-surface font-light mt-2">
@@ -42,47 +42,45 @@ const ui = getUI(lang);
           return (
             <CardTag
               class:list={[
-                'bg-surface-container-low p-space-md flex flex-col justify-between gilded-frame reveal-node',
-                detailHref && 'group cursor-pointer hover:-translate-y-1 transition-transform duration-500',
+                'flex flex-col reveal-node',
+                detailHref && 'group cursor-pointer',
               ]}
               {...(detailHref ? { href: detailHref } : {})}
             >
-              <div class="w-full aspect-[4/3] bg-surface-dim overflow-hidden mb-space-md relative border border-outline-variant/30">
+              <div class="w-full aspect-[4/3] bg-surface-dim overflow-hidden relative gilded-frame photo-mask">
                 <div
-                  class="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
+                  class="w-full h-full bg-cover bg-center photo-zoom"
                   style={`background-image: url('${normalizeAssetPath(s.image)}')`}
                   role="img"
                   aria-label={s.imageAlt}
                 />
                 <div class="sample-watermark">{ui.watermark}</div>
               </div>
+              <p class="photo-caption">{s.badge}</p>
 
-              <div class="flex flex-col grow">
-                <span class="font-sans text-[10px] uppercase tracking-[0.24em] text-secondary font-semibold mb-2">
+              <div class="flex flex-col grow mt-space-sm">
+                <span class="font-sans text-[11px] uppercase tracking-[0.26em] text-[var(--gold-text)] font-normal mb-2">
                   {s.code}
                 </span>
                 <h3 class="font-display text-lg lg:text-xl text-on-surface font-light mb-space-sm">
                   {s.title}
                 </h3>
-                <p class="font-body text-sm text-on-surface-variant font-light leading-relaxed mb-space-md grow">
+                <p class="font-body text-[15px] text-on-surface-variant leading-[2] mb-space-md grow">
                   {s.body}
                 </p>
 
-                <div class="mt-auto">
-                  <div class="absolute-none" />
-                  <div class="flex items-center justify-between gap-2 pt-space-sm border-t border-outline-variant/30">
-                    <span class="font-sans text-[10px] uppercase tracking-[0.18em] text-on-surface-variant">
-                      {s.badge}
+                <div class="mt-auto flex items-center justify-between gap-2 pt-space-sm border-t border-[var(--hairline)]">
+                  <span class="font-sans text-[10px] uppercase tracking-[0.18em] text-on-surface-variant">
+                    &nbsp;
+                  </span>
+                  {detailHref && (
+                    <span class="inline-flex items-center gap-1 font-sans text-[10px] uppercase tracking-[0.18em] text-[var(--gold-text)] group-hover:text-primary transition-colors">
+                      {ui.readMore}
+                      <svg class="icon-inline text-[14px] group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M14.7 5.3 13.3 6.7 17.6 11H4v2h13.6l-4.3 4.3 1.4 1.4L21.4 12z" />
+                      </svg>
                     </span>
-                    {detailHref && (
-                      <span class="inline-flex items-center gap-1 font-sans text-[10px] uppercase tracking-[0.18em] text-secondary group-hover:text-primary transition-colors">
-                        {ui.readMore}
-                        <svg class="icon-inline text-[14px] group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                          <path d="M14.7 5.3 13.3 6.7 17.6 11H4v2h13.6l-4.3 4.3 1.4 1.4L21.4 12z" />
-                        </svg>
-                      </span>
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
             </CardTag>

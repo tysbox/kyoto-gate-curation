@@ -49,21 +49,32 @@ const nav = settings?.nav ?? [];
       class="hidden xl:flex items-center gap-6 2xl:gap-10 font-sans text-xs uppercase tracking-[0.18em]"
     >
       {
-        nav.map((item) => (
-          <a
-            class="text-on-surface-variant hover:text-on-surface transition-colors py-2"
-            href={localizedHref(lang, item.href)}
-          >
-            {item.label}
-          </a>
-        ))
+        nav.map((item) => {
+          // 「英語 (日本語)」の括弧表記を2行に分割 (CMSの値は変更しない)
+          const m = item.label.match(/^(.*?)\s*[（(]([^）)]*)[）)]\s*$/);
+          const en = m ? m[1].trim() : item.label;
+          const ja = m ? m[2].trim() : '';
+          return (
+            <a
+              class="flex flex-col leading-tight text-on-surface-variant hover:text-on-surface transition-colors py-2"
+              href={localizedHref(lang, item.href)}
+            >
+              <span>{en}</span>
+              {ja && (
+                <span class="text-[10px] normal-case tracking-[0.12em] opacity-60 font-normal">
+                  {ja}
+                </span>
+              )}
+            </a>
+          );
+        })
       }
     </nav>
 
     <div class="flex items-center gap-3 sm:gap-5">
       <LanguageSwitcher lang={lang} />
       <a
-        class="hidden sm:inline-flex items-center justify-center font-sans text-xs uppercase tracking-[0.18em] px-4 lg:px-6 py-2.5 bg-primary text-on-primary hover:bg-primary/90 transition-all border border-secondary/30 shadow-sm whitespace-nowrap"
+        class="header-cta hidden sm:inline-flex items-center justify-center font-sans text-xs uppercase tracking-[0.18em] px-4 lg:px-6 py-2.5 whitespace-nowrap"
         href={localizedHref(lang, '#accreditation-form')}
       >
         {ui.cta}
@@ -86,11 +97,19 @@ const nav = settings?.nav ?? [];
   <!-- モバイルドロワー -->
   <nav class="nav-drawer xl:hidden" id="nav-drawer" data-open="false" aria-label={ui.menuLabel}>
     {
-      nav.map((item) => (
-        <a href={localizedHref(lang, item.href)}>{item.label}</a>
-      ))
+      nav.map((item) => {
+        const m = item.label.match(/^(.*?)\s*[（(]([^）)]*)[）)]\s*$/);
+        const en = m ? m[1].trim() : item.label;
+        const ja = m ? m[2].trim() : '';
+        return (
+          <a href={localizedHref(lang, item.href)}>
+            <span class="block">{en}</span>
+            {ja && <span class="block text-[10px] normal-case tracking-[0.12em] opacity-60">{ja}</span>}
+          </a>
+        );
+      })
     }
-    <a href={localizedHref(lang, '#accreditation-form')} class="font-semibold">{ui.cta}</a>
+    <a href={localizedHref(lang, '#accreditation-form')}>{ui.cta}</a>
   </nav>
 </header>
 

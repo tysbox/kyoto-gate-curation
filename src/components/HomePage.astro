@@ -26,22 +26,22 @@ const data = loadPageData(lang);
 
       <!-- Plate 01 / 02 (工芸・食) -->
       <section
-        class="w-full bg-surface-container-low py-space-xl px-6 lg:px-16 relative border-t border-b border-outline-variant/30"
+        class="w-full bg-background py-[var(--section-y)] px-6 lg:px-16 relative"
         id="ateliers"
       >
         <div class="max-w-container mx-auto">
           <div class="flex items-center justify-between mb-space-lg border-b border-outline-variant/30 pb-4 reveal-node">
-            <span class="font-sans text-xs uppercase tracking-[0.2em] text-secondary font-semibold">
+            <span class="font-sans text-[11px] uppercase tracking-[0.26em] text-[var(--gold-text)] font-normal">
               Living Ateliers
             </span>
-            <span class="hidden sm:flex items-center gap-2 text-on-surface-variant font-sans text-xs">
+            <span class="hidden sm:flex items-center gap-2 text-on-surface-variant font-sans text-[11px] tracking-[0.2em] uppercase font-normal">
               <span>REGISTER: 淺野鍛冶屋 / 表望堂 / 開化堂</span>
             </span>
           </div>
 
-          <div class="space-y-space-xl">
+          <div class="space-y-[var(--section-y)]">
             {data.plates.map((plate, i) => (
-              <PlateSection lang={lang} plate={plate} index={i} />
+              <PlateSection lang={lang} plate={plate} index={i} fullBleed={plate.id === 'gastronomy'} />
             ))}
           </div>
         </div>

@@ -15,16 +15,16 @@ const ui = getUI(lang);
 const form = accreditation.form;
 ---
 
-<section class="w-full bg-surface-container-low py-space-xl px-6 lg:px-16 relative" id="accreditation">
+<section class="w-full bg-background py-[var(--section-y)] px-6 lg:px-16 relative" id="accreditation">
   <div class="max-w-container mx-auto">
     <div class="reveal-node text-center max-w-2xl mx-auto mb-16">
-      <span class="font-sans text-xs uppercase tracking-[0.2em] text-secondary font-semibold">
+      <span class="font-sans text-[11px] uppercase tracking-[0.26em] text-[var(--gold-text)] font-normal">
         {accreditation.eyebrow}
       </span>
       <h2 class="font-display text-2xl md:text-4xl text-on-surface font-light mt-2 mb-space-sm">
         {accreditation.title}
       </h2>
-      <p class="font-body text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
+      <p class="font-body text-[15px] text-on-surface-variant leading-[2]">
         {accreditation.body}
       </p>
     </div>
@@ -34,7 +34,7 @@ const form = accreditation.form;
       <form
         class="reveal-node space-y-10"
         id="accreditation-form"
-        onsubmit="event.preventDefault(); document.getElementById('accreditation-form')?.classList.add('hidden'); document.getElementById('confirmation-view')?.classList.remove('hidden');"
+        novalidate
       >
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
           {
@@ -104,13 +104,21 @@ const form = accreditation.form;
               <path d="M9.6 16.2 5.4 12l-1.4 1.4 5.6 5.6L20.4 7.8 19 6.4z" />
             </svg>
           </button>
-          <p class="font-body text-xs text-on-surface-variant leading-relaxed">
-            {form.protocolText}
-          </p>
+          <div class="flex flex-col gap-2">
+            <p class="font-body text-xs text-on-surface-variant leading-relaxed">
+              {form.protocolText}
+            </p>
+            <div
+              class="h-px w-full bg-[var(--gold-line)] opacity-0 transition-opacity duration-500"
+              id="protocol-warning"
+              aria-hidden="true"
+            >
+            </div>
+          </div>
         </div>
 
         <button
-          class="w-full inline-flex items-center justify-center font-sans text-xs uppercase tracking-[0.18em] px-6 py-4 bg-primary text-on-primary hover:bg-primary/90 transition-all border border-secondary/30 shadow-sm"
+          class="w-full inline-flex items-center justify-center font-sans text-xs uppercase tracking-[0.18em] px-6 py-4 bg-primary text-on-primary hover:bg-primary/90 transition-all"
           type="submit"
         >
           {form.submitLabel}
@@ -150,16 +158,35 @@ const form = accreditation.form;
 </section>
 
 <script>
-  // プロトコル承諾トグル
+  // プロトコル承諾トグル (指示書 P3-2: 未選択=細枠 / 選択=墨塗り+白チェック)
   const btn = document.getElementById('protocol-btn');
   const check = document.getElementById('protocol-check');
+  const warning = document.getElementById('protocol-warning');
+  const form = document.getElementById('accreditation-form') as HTMLFormElement | null;
+  const confirmation = document.getElementById('confirmation-view');
+  let accepted = false;
+
   if (btn && check) {
-    let accepted = false;
     btn.addEventListener('click', () => {
       accepted = !accepted;
       check.classList.toggle('opacity-0', !accepted);
       btn.classList.toggle('bg-primary', accepted);
       check.classList.toggle('text-white', accepted);
+      // 同意したら警告線を消す
+      if (accepted && warning) warning.style.opacity = '0';
     });
   }
+
+  // 送信: 未同意なら金の細線を表示、同意済みならページ内確認表示へ (alert不使用)
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!accepted) {
+      if (warning) warning.style.opacity = '1';
+      btn?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    form.classList.add('hidden');
+    confirmation?.classList.remove('hidden');
+    confirmation?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 </script>

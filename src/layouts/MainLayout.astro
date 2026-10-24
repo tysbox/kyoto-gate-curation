@@ -6,6 +6,13 @@
  * - 言語切替・ナビ・フッターを内包
  */
 import '../styles/global.css';
+// セルフホストWebフォント (指示書 P2-1)
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/zen-old-mincho/400.css';
+import '@fontsource/zen-old-mincho/500.css';
 import Header from '../components/global/Header.astro';
 import Footer from '../components/global/Footer.astro';
 import { localeHtmlLang, type Locale } from '../i18n';
@@ -75,9 +82,13 @@ const { lang, title, description } = Astro.props;
         }
         window.addEventListener('scroll', sweep, { passive: true });
         window.addEventListener('resize', sweep, { passive: true });
+        window.addEventListener('load', sweep);
+        document.addEventListener('scrollend', sweep);
+        // アンカージャンプ直後にも確実に発火させる
         sweep();
         setTimeout(sweep, 300);
         setTimeout(sweep, 1200);
+        setTimeout(sweep, 2500);
       })();
     </script>
   </body>

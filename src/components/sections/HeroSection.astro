@@ -37,7 +37,7 @@ const { lang, hero } = Astro.props;
   </div>
 
   <div class="hero3-inner hero-pad relative z-2 max-w-container mx-auto">
-    <div class="hero2-eyebrow rise font-sans text-[11px] uppercase tracking-[0.28em] text-secondary" style="animation-delay:1.5s">
+    <div class="rise font-sans text-[11px] uppercase tracking-[0.28em] text-[var(--gold-text)] font-normal mb-4" style="animation-delay:1.5s">
       {hero.eyebrow}
     </div>
     <div class="gold-line" aria-hidden="true"></div>
@@ -54,17 +54,25 @@ const { lang, hero } = Astro.props;
       {hero.subtitle}
     </p>
     <a
-      class="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.18em] px-6 py-3 bg-primary text-on-primary hover:bg-primary/90 transition-all border border-secondary/30 shadow-sm"
+      class="hero-cta"
       href={localizedHref(lang, hero.ctaHref)}
     >
-      {hero.ctaText}
+      <span>{hero.ctaText}</span>
+      <svg
+        class="hero-cta-arrow icon-inline"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M11 4v12.17l-5.29-5.3L4.3 12.3 12 20l7.7-7.7-1.41-1.42L13 16.17V4z" />
+      </svg>
     </a>
   </div>
 
   <!-- 右下の帯注記 -->
   {
     hero.obiText && (
-      <div class="hero3-obi absolute z-3 left-6 lg:left-16 bottom-6 lg:bottom-10 px-3.5 py-2.5 bg-surface/86 backdrop-blur-md font-sans text-[10px] lg:text-[11px] tracking-[0.2em] uppercase text-on-surface">
+      <div class="absolute z-3 left-6 lg:left-16 bottom-6 lg:bottom-10 font-sans text-[11px] tracking-[0.2em] uppercase text-on-surface-variant">
         {hero.obiText}
       </div>
     )
