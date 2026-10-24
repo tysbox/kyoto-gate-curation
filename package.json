@@ -1,0 +1,38 @@
+{
+  "name": "kyoto-gateway-web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4321",
+    "edit": "npm run tina:dev",
+    "tina:dev": "tinacms dev -c \"astro dev --host 127.0.0.1 --port 4321\"",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "predev": "node scripts/sync-api-routes.mjs",
+    "preedit": "node scripts/sync-api-routes.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/node": "^11.1.6",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tinacms/app": "^2.6.0",
+    "@tinacms/astro": "^0.8.0",
+    "@tinacms/cli": "^3.1.0",
+    "astro": "^7.3.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "tinacms": "^3.14.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.3"
+  }
+}

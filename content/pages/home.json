@@ -1,0 +1,196 @@
+{
+  "title": "KYOTO GATEWAY — Curating Your Passage to the Root Slate",
+  "description": "An unhurried passage curated for the world's most pressured minds. Not a commercial tour, but a sacred threshold where the leader's defensive armor dissolves into absolute presence.",
+  "nav": [
+    {
+      "label": "The Doctrine (構想定理)",
+      "href": "#manifesto"
+    },
+    {
+      "label": "Sanctuaries (禅・数寄)",
+      "href": "#sanctuaries"
+    },
+    {
+      "label": "Living Ateliers (工芸)",
+      "href": "#ateliers"
+    },
+    {
+      "label": "Gastronomy (食)",
+      "href": "#gastronomy"
+    },
+    {
+      "label": "Patronage (100% 直納)",
+      "href": "#accreditation"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Passage 01 — Architecture of the Void — 素の盤面",
+    "title": "Where silence is an architecture, and time ceases to advance.",
+    "subtitle": "An unhurried passage curated for the world's most pressured minds. Not a commercial tour, but a sacred threshold where the leader's defensive armor dissolves into absolute presence.",
+    "ctaText": "Diagnostic Intake (事前診立て)",
+    "ctaHref": "#accreditation-form",
+    "image": "/images/hero.jpg",
+    "imageAlt": "Kyoto sanctuary approach framed by cedar and mist",
+    "verticalText": "無門・素の盤面",
+    "obiText": "Sanctuary Acoustic: 14 dB Silence"
+  },
+  "manifesto": {
+    "eyebrow": "The Core Thesis & Paradox of Double Unloading",
+    "title": "Accepting Fracture: The Alchemy of Wabi-Sabi",
+    "quote": "“The sanctuary does not open with superficial connections. It gathers the few who know how to disarm their own armor.”",
+    "body": "現代リーダーの過酷な病理——KPIの強迫観念と過剰なコントロール欲を、京都千年の精神文化（禅・数寄・工芸・食）を触媒として解除する。中間業者の30〜50%搾取を完全排除し、対価の100%を社寺・名工へ直接納入することで、顧客は消費者を脱し「文化の真のパトロン」へと昇華します。",
+    "metrics": [
+      {
+        "value": "12",
+        "label": "Annual Inscriptions",
+        "note": "年間12組厳格限定"
+      },
+      {
+        "value": "100",
+        "unit": "%",
+        "label": "Direct Cultural Return",
+        "note": "中間搾取ゼロ・全額直納"
+      },
+      {
+        "value": "45",
+        "unit": "min",
+        "label": "Diagnostic Intake",
+        "note": "伴走者との事前診立て"
+      }
+    ]
+  },
+  "plates": [
+    {
+      "id": "ateliers",
+      "code": "Plate 01 // The Living Masters",
+      "kicker": "Urushiol Chemistry & Blade Forging",
+      "title": "Accepting Fracture: The Alchemy of Wabi-Sabi",
+      "body": "130工程を経て撫でるほどに深まる開化堂の茶筒。割れや破損を黄金で肯定し、不完全さを不朽の美へと昇華させる表望堂の金継ぎ（ウルシオール化学）。そして一振り650万円の作刀鍛造没入（淺野鍛冶屋）。完璧主義の呪縛を解き、超長期の時間軸へと身を委ねる触媒。",
+      "image": "/images/plate01-crafts.jpg",
+      "imageAlt": "Artisan hands finishing a lacquered tea caddy",
+      "badgeTop": "REGISTER: 淺野鍛冶屋 / 表望堂 / 開化堂",
+      "badgeBottom": "URUSHIOL RESIN // 100-YEAR MATURATION",
+      "specs": [
+        {
+          "label": "Covenant Asset",
+          "value": "Kaikado Tea Caddy / Hyoso Gold Joinery"
+        },
+        {
+          "label": "Sensory Impact",
+          "value": "Temporal Deceleration"
+        }
+      ],
+      "cta": {
+        "label": "Explore Ephemeral Craft",
+        "href": "#accreditation-form"
+      },
+      "detailSlug": "living-masters"
+    },
+    {
+      "id": "gastronomy",
+      "code": "Plate 02 // Molecular Ecology",
+      "kicker": "Hyotei 400 Years",
+      "title": "Shunting the Critical Mind: The 8-Fold Umami Expansion",
+      "body": "瓢亭の400年培われた出汁。京都の軟水が引き出すグルタミン酸×イノシン酸の相乗効果は、口に含んだ瞬間に頭脳による品評・分析的思考を強制シャットダウンさせます。味覚と身体細胞が自然と一体化する主客未分の生命観。",
+      "image": "/images/plate02-gastronomy.jpg",
+      "imageAlt": "Hyotei chef plating a seasonal kaiseki course",
+      "badgeTop": "RITUAL ASSET: 瓢亭 400 YEARS",
+      "badgeBottom": "MOMOYAMA BIZEN STONEWARE // PINE ASH GLAZE",
+      "specs": [
+        {
+          "label": "Covenant Asset",
+          "value": "Hyotei Thatched Tearoom Chashitsu"
+        },
+        {
+          "label": "Sensory Impact",
+          "value": "Immediate De-intellectualization"
+        }
+      ],
+      "cta": {
+        "label": "Explore Ephemeral Gastronomy",
+        "href": "#accreditation-form"
+      },
+      "detailSlug": "molecular-ecology"
+    }
+  ],
+  "sanctuaries": [
+    {
+      "id": "sanctuary-01",
+      "code": "SANCTUARY 01 // ZEN",
+      "title": "仁和寺「松林庵」＆退蔵院",
+      "body": "1泊100万円での世界遺産夜間無人独占。風と虫の音だけに包かれる絶対的安全圏。ロジックが通用しない禅問答に直面し、頭の計算機を強制停止させる「大死一番」の実存体験。",
+      "image": "/images/sanctuary01-zen.jpg",
+      "imageAlt": "Raked gravel garden at Ninna-ji in stillness",
+      "badge": "Non-Orthogonal Sukiya Space",
+      "detailSlug": "ninna-ji-shorin-an"
+    },
+    {
+      "id": "sanctuary-02",
+      "code": "SANCTUARY 02 // SUKI",
+      "title": "紫匠庵 (数寄屋大工の仕口)",
+      "body": "金属釘を一本も使わない木組みと変木構造の非対称性。自然の曲がり木と同調する空間解剖を通じて、直線的・西洋的な完全主義の強迫観念を解き放つ。",
+      "image": "/images/sanctuary02-suki.jpg",
+      "imageAlt": "Joinery detail of a sukiya tearoom",
+      "badge": "Diffused Shadow Immersion",
+      "detailSlug": "shisho-an"
+    },
+    {
+      "id": "sanctuary-03",
+      "code": "SANCTUARY 03 // AMBIENT",
+      "title": "炭屋旅館「玉兎庵」",
+      "body": "『陰翳礼讃』の光調律。障子を透過する薄暗がりと拡散光の中に身を置くことで、目立つことへの強迫観念を融解。空間と身体の境界が溶け合うアンビエントな安息。",
+      "image": "/images/sanctuary03-ryokan.jpg",
+      "imageAlt": "Shoji-diffused light in a ryokan chamber",
+      "badge": "1 Night Sole Occupancy // ¥1,000,000",
+      "detailSlug": "sumiya-ryokan"
+    }
+  ],
+  "accreditation": {
+    "eyebrow": "Patron Registry",
+    "title": "The Patron Registry — Diagnostic Intake",
+    "body": "年間12組厳格限定。京都の聖域と当主の尊厳を守るため、完全事前審査制をとっております。旅行手配の販売ではなく、知財コンサルティングおよび現場伴走の受託契約（定額フィー）として受任いたします。",
+    "form": {
+      "title": "Nomination Sealed & Received",
+      "description": "受任審査を開始いたします。",
+      "fields": [
+        {
+          "name": "designation",
+          "label": "Patron Designation & Executive Title",
+          "placeholder": "e.g., Lord / Dr. Julian Vance, Founder",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "dispatch",
+          "label": "Confidential Dispatch Channel",
+          "placeholder": "consular-archive@familyoffice.org",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "season",
+          "label": "Contemplated Season (72 Pentads)",
+          "placeholder": "e.g., 立春 / Early February",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "lineage",
+          "label": "Cultural Lineage Vector",
+          "placeholder": "e.g., Chanoyu / Bizen ware / Blade",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "armor",
+          "label": "Nature of the Armor (Current Weight, Decision Pressures & Inquiries)",
+          "placeholder": "どのような成果主義の重圧や判断の迷い（鎧）を今回の京都の静寂で降ろしたいかをご記入ください...",
+          "required": true,
+          "type": "textarea"
+        }
+      ],
+      "protocolText": "I accept the Protocol of Stillness: 成果や評価の一切を問わない絶対的安全圏の維持、デジタル機器の完全遮断、および文化財・当主の尊厳に対する不干渉。",
+      "submitLabel": "Transmit Epistolary Nomination"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+---
+/**
+ * Plate セクション(工芸・食)
+ * 12カラムグリッドの2段組。画像とテキストの順序は交互に入れ替える。
+ * detailSlug が設定されていれば、詳細記事ページへの導線を表示する。
+ */
+import { normalizeAssetPath, localizedHref, getUI, type Locale } from '../../i18n';
+import type { Plate } from '../../types';
+
+interface Props {
+  lang: Locale;
+  plate: Plate;
+  /** 0=画像左 / 1=画像右 */
+  index: number;
+}
+const { lang, plate, index } = Astro.props;
+const ui = getUI(lang);
+const imageFirst = index % 2 === 0;
+const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detailSlug}`) : null;
+---
+
+<div
+  class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center reveal-node"
+  id={plate.id}
+>
+  <!-- 画像 -->
+  <div
+    class:list={[
+      'lg:col-span-8 relative group',
+      imageFirst ? 'order-1' : 'order-1 lg:order-2',
+    ]}
+  >
+    <div
+      class="w-full aspect-[16/10] overflow-hidden bg-surface-dim relative gilded-frame shadow-md"
+    >
+      <div
+        class="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
+        style={`background-image: url('${normalizeAssetPath(plate.image)}')`}
+        role="img"
+        aria-label={plate.imageAlt}
+      >
+      </div>
+      <div class="sample-watermark">{ui.watermark}</div>
+
+      {
+        plate.badgeTop && (
+          <div
+            class="absolute top-4 right-4 lg:top-6 lg:right-6 bg-surface/90 backdrop-blur-md px-3 lg:px-4 py-2 border border-secondary/40 flex items-center gap-3"
+          >
+            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            <span class="font-sans text-[10px] lg:text-[11px] uppercase tracking-[0.22em] text-on-surface font-semibold">
+              {plate.badgeTop}
+            </span>
+          </div>
+        )
+      }
+
+      {
+        plate.badgeBottom && (
+          <div
+            class="absolute bottom-4 left-4 bg-primary/80 backdrop-blur-sm text-[11px] font-mono tracking-widest text-on-primary px-2.5 py-1 uppercase hidden sm:block"
+          >
+            {plate.badgeBottom}
+          </div>
+        )
+      }
+    </div>
+  </div>
+
+  <!-- テキスト -->
+  <div
+    class:list={[
+      'lg:col-span-4 flex flex-col justify-center',
+      imageFirst ? 'lg:pl-space-md mt-space-md lg:mt-0' : 'lg:pr-space-md order-2 lg:order-1',
+    ]}
+  >
+    <div class="flex flex-wrap items-center gap-2 mb-space-xs">
+      <span class="font-sans text-xs uppercase tracking-[0.26em] text-secondary font-semibold">
+        {plate.code}
+      </span>
+      {
+        plate.kicker && (
+          <>
+            <span class="text-outline-variant">—</span>
+            <span class="font-sans text-xs tracking-widest text-on-surface-variant uppercase">
+              {plate.kicker}
+            </span>
+          </>
+        )
+      }
+    </div>
+
+    <h2 class="font-display text-2xl lg:text-3xl text-on-surface font-light leading-snug mb-space-sm">
+      {plate.title}
+    </h2>
+
+    <div class="w-12 h-[1px] bg-secondary mb-space-md"></div>
+
+    <p class="font-body text-sm text-on-surface-variant font-light leading-relaxed mb-space-md">
+      {plate.body}
+    </p>
+
+    {
+      plate.specs && plate.specs.length > 0 && (
+        <div
+          class="space-y-space-sm bg-surface-container-lowest p-space-md mb-space-md border-l-2 border-secondary/60 gilded-frame"
+        >
+          {plate.specs.map((s) => (
+            <div class="flex justify-between items-center gap-4 text-xs font-sans">
+              <span class="uppercase tracking-wider text-on-surface-variant">{s.label}</span>
+              <span class="font-medium text-on-surface text-right">{s.value}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="flex flex-wrap items-center gap-4">
+      {
+        plate.cta && (
+          <a
+            class="inline-flex items-center gap-space-xs text-primary font-sans text-xs uppercase tracking-[0.2em] group py-1 border-b border-primary"
+            href={localizedHref(lang, plate.cta.href)}
+          >
+            <span>{plate.cta.label}</span>
+            <svg class="icon-inline text-[16px] group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14.7 5.3 13.3 6.7 17.6 11H4v2h13.6l-4.3 4.3 1.4 1.4L21.4 12z" />
+            </svg>
+          </a>
+        )
+      }
+      {
+        detailHref && (
+          <a
+            class="inline-flex items-center gap-space-xs text-secondary font-sans text-xs uppercase tracking-[0.2em] group py-1 border-b border-secondary/60 hover:text-primary hover:border-primary transition-colors"
+            href={detailHref}
+          >
+            <span>{ui.readMore}</span>
+            <svg class="icon-inline text-[16px] group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14.7 5.3 13.3 6.7 17.6 11H4v2h13.6l-4.3 4.3 1.4 1.4L21.4 12z" />
+            </svg>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>

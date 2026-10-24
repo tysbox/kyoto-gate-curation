@@ -1,0 +1,64 @@
+---
+/**
+ * フッター
+ */
+import { loadGlobalSettings, getUI, type Locale } from '../../i18n';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const settings = loadGlobalSettings(lang);
+const ui = getUI(lang);
+const footer = settings?.footer;
+---
+
+<footer
+  class="w-full bg-surface-container-lowest border-t border-outline-variant/30 washi-grain py-12 lg:py-16 px-6 lg:px-16"
+>
+  <div
+    class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-outline-variant/30 text-xs"
+  >
+    <div class="md:col-span-5">
+      <span
+        class="font-display text-lg text-primary uppercase tracking-widest block mb-2"
+      >
+        {settings?.logoText ?? 'KYOTO GATEWAY'}
+        <span lang="ja" class="font-serif text-secondary text-sm">{settings?.tagline ?? ''}</span>
+      </span>
+      <p class="font-body text-on-surface-variant max-w-sm leading-relaxed mb-4">
+        {footer?.description ?? ui.footerTagline}
+      </p>
+      <div class="font-mono text-secondary uppercase tracking-widest">
+        {footer?.coordinates ?? ui.coordinates}
+      </div>
+    </div>
+
+    <div class="md:col-span-3 space-y-2">
+      <div class="font-sans font-semibold tracking-wider text-primary uppercase mb-3">
+        {footer?.catalystsTitle ?? ui.footerCatalysts}
+      </div>
+      {
+        (footer?.catalysts ?? []).map((c) => (
+          <div class="text-on-surface-variant">{c}</div>
+        ))
+      }
+    </div>
+
+    <div class="md:col-span-4 bg-surface-container-low p-6 gilded-frame">
+      <span class="font-sans font-semibold text-secondary uppercase tracking-widest block mb-1">
+        {footer?.patronageTitle ?? ui.footerPatronage}
+      </span>
+      <p class="font-body text-on-surface leading-relaxed">
+        {footer?.patronageBody ?? ui.footerPatronageBody}
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="max-w-container mx-auto pt-6 flex flex-col sm:flex-row justify-between gap-2 text-[11px] font-sans text-on-surface-variant"
+  >
+    <div>{footer?.rights ?? ui.footerRights}</div>
+    <div>{footer?.model ?? ui.footerModel}</div>
+  </div>
+</footer>

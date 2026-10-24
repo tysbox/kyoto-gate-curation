@@ -1,0 +1,43 @@
+{
+  "siteName": "KYOTO GATEWAY",
+  "logoText": "KYOTO GATEWAY",
+  "logoSubtext": "Votre passage vers l’ardoise vierge",
+  "tagline": "無門",
+  "nav": [
+    {
+      "label": "La Doctrine (構想定理)",
+      "href": "#manifesto"
+    },
+    {
+      "label": "Sanctuaires (禅・数寄)",
+      "href": "#sanctuaries"
+    },
+    {
+      "label": "Ateliers vivants (工芸)",
+      "href": "#ateliers"
+    },
+    {
+      "label": "Gastronomie (食)",
+      "href": "#gastronomy"
+    },
+    {
+      "label": "Mécénat (100 % direct)",
+      "href": "#accreditation"
+    }
+  ],
+  "footer": {
+    "description": "Une curation D2C qui fait fondre le seuil psychologique des dirigeants modernes — leur armure défensive — pour les guider vers une ardoise vierge, sans aucune application.",
+    "catalystsTitle": "Quatre catalyseurs fondamentaux",
+    "catalysts": [
+      "禅 (Zen) — Ninna-ji « Shōrin-an » · Taizō-in",
+      "数寄 (Suki) — Shishō-an · Sumiya Ryokan « Gyokuto-an »",
+      "工芸 (Crafts) — Kaikado · Hyoso · Asano Forge",
+      "食 (Gastronomie) — Hyotei · cuisine shōjin"
+    ],
+    "patronageTitle": "Mécénat culturel direct",
+    "patronageBody": "Élimination totale des prélèvements de 30 à 50 % des agences. L’intégralité revient directement à la restauration du patrimoine et à la transmission des artisans.",
+    "coordinates": "35°00′42″N 135°46′05″E // RÉGION DE HIGASHIYAMA",
+    "rights": "© 2026 KYOTO GATEWAY. MONOGRAPHE RÉSERVÉ AUX CLIENTS ET PARTENAIRES PRIVÉS.",
+    "model": "CURATION BESPOKE D2C & DÉCOUPLAGE PSYCHOLOGIQUE"
+  }
+}

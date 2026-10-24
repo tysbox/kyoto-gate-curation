@@ -1,0 +1,196 @@
+{
+  "title": "KYOTO GATEWAY — Votre passage vers l’ardoise vierge",
+  "description": "Un passage sans hâte, conçu pour les esprits les plus sous pression. Non pas un circuit commercial, mais un seuil sacré où l’armure défensive du dirigeant se dissout dans une présence absolue.",
+  "nav": [
+    {
+      "label": "La Doctrine (構想定理)",
+      "href": "#manifesto"
+    },
+    {
+      "label": "Sanctuaires (禅・数寄)",
+      "href": "#sanctuaries"
+    },
+    {
+      "label": "Ateliers vivants (工芸)",
+      "href": "#ateliers"
+    },
+    {
+      "label": "Gastronomie (食)",
+      "href": "#gastronomy"
+    },
+    {
+      "label": "Mécénat (100 % direct)",
+      "href": "#accreditation"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Passage 01 — L’architecture du vide — 素の盤面",
+    "title": "Là où le silence devient une architecture, et le temps cesse d’avancer.",
+    "subtitle": "Un passage sans hâte, conçu pour les esprits les plus sous pression. Non pas un circuit commercial, mais un seuil sacré où l’armure défensive du dirigeant se dissout dans une présence absolue.",
+    "ctaText": "Diagnostic initial (事前診立て)",
+    "ctaHref": "#accreditation-form",
+    "image": "/images/hero.jpg",
+    "imageAlt": "Approche d’un sanctuaire de Kyoto encadré de cèdres et de brume",
+    "verticalText": "無門・素の盤面",
+    "obiText": "Acoustique du sanctuaire : 14 dB de silence"
+  },
+  "manifesto": {
+    "eyebrow": "Thèse centrale — le paradoxe du double délestage",
+    "title": "Accepter la fracture : l’alchimie du wabi-sabi",
+    "quote": "« Le sanctuaire ne s’ouvre pas par des liens superficiels. Il rassemble les rares personnes qui savent désarmer leur propre armure. »",
+    "body": "La pathologie brutale des dirigeants modernes — l’obsession des KPI et le désir excessif de contrôle — est levée par la culture spirituelle millénaire de Kyoto (zen · suki · artisanat · gastronomie) comme catalyseur. En éliminant totalement la ponction de 30 à 50 % des intermédiaires et en versant 100 % de la contrepartie directement aux temples et aux maîtres artisans, le client cesse d’être consommateur pour s’élever au rang de véritable mécène de la culture.",
+    "metrics": [
+      {
+        "value": "12",
+        "label": "Inscriptions annuelles",
+        "note": "12 couples par an, strictement"
+      },
+      {
+        "value": "100",
+        "unit": "%",
+        "label": "Retour culturel direct",
+        "note": "Zéro prélèvement · versement intégral"
+      },
+      {
+        "value": "45",
+        "unit": "min",
+        "label": "Diagnostic initial",
+        "note": "Entretien préalable avec l’accompagnateur"
+      }
+    ]
+  },
+  "plates": [
+    {
+      "id": "ateliers",
+      "code": "Planche 01 // Les maîtres vivants",
+      "kicker": "Chimie de l’urushiol et forge de lame",
+      "title": "Accepter la fracture : l’alchimie du wabi-sabi",
+      "body": "La boîte à thé Kaikado, traversée de 130 étapes, s’approfondit à chaque effleurement. Le kintsugi de Hyoso affirme l’or des fêlures et transmute l’imperfection en beauté impérissable (chimie de l’urushiol). Puis l’immersion dans la forge d’une lame à 6,5 millions de yens (Asano Forge). Un catalyseur qui défait l’obsession de la perfection et confie le corps à l’échelle du temps ultralong.",
+      "image": "/images/plate01-crafts.jpg",
+      "imageAlt": "Mains d’artisan achevant une boîte à thé laquée",
+      "badgeTop": "REGISTRE : Asano Forge / Hyoso / Kaikado",
+      "badgeBottom": "RÉSINE URUSHIOL // MÛRISSAGE 100 ANS",
+      "specs": [
+        {
+          "label": "Actif sous contrat",
+          "value": "Boîte à thé Kaikado / kintsugi Hyoso"
+        },
+        {
+          "label": "Impact sensoriel",
+          "value": "Décélération temporelle"
+        }
+      ],
+      "cta": {
+        "label": "Explorer l’artisanat",
+        "href": "#accreditation-form"
+      },
+      "detailSlug": "living-masters"
+    },
+    {
+      "id": "gastronomy",
+      "code": "Planche 02 // Écologie moléculaire",
+      "kicker": "Hyotei, 400 ans",
+      "title": "Mettre l’esprit critique en veille : l’expansion umami octuple",
+      "body": "Le bouillon dashi de Hyotei, mûri sur quatre siècles. La synergie glutamate × inosinate, tirée par l’eau douce de Kyoto, force l’arrêt immédiat de l’évaluation et de la pensée analytique dès l’instant où le mets entre en bouche. Le goût et les cellules du corps fusionnent naturellement : une vision de la vie où sujet et objet ne sont pas encore séparés.",
+      "image": "/images/plate02-gastronomy.jpg",
+      "imageAlt": "Chef de Hyotei dressant un plat de kaiseki saisonnier",
+      "badgeTop": "ACTIF RITUEL : HYOTEI 400 ANS",
+      "badgeBottom": "GRÈS BIZEN MOMOYAMA // GLASURE DE CENDRE DE PIN",
+      "specs": [
+        {
+          "label": "Actif sous contrat",
+          "value": "Chashitsu de chaume de Hyotei"
+        },
+        {
+          "label": "Impact sensoriel",
+          "value": "Désintellectualisation immédiate"
+        }
+      ],
+      "cta": {
+        "label": "Explorer la gastronomie",
+        "href": "#accreditation-form"
+      },
+      "detailSlug": "molecular-ecology"
+    }
+  ],
+  "sanctuaries": [
+    {
+      "id": "sanctuary-01",
+      "code": "SANCTUAIRE 01 // ZEN",
+      "title": "Ninna-ji « Shōrin-an » & Taizō-in",
+      "body": "Une occupation nocturne exclusive, sans personne, d’un site du patrimoine mondial, pour un million de yens la nuit. Une zone de sécurité absolue, enveloppée du seul bruit du vent et des insectes. Confronté au kōan où la logique ne s’applique pas, l’ordinateur mental est forcé de s’arrêter : l’expérience existentielle du « grand trépas ».",
+      "image": "/images/sanctuary01-zen.jpg",
+      "imageAlt": "Jardin de gravire ratissé à Ninna-ji, dans l’immobilité",
+      "badge": "Espace suki non orthogonal",
+      "detailSlug": "ninna-ji-shorin-an"
+    },
+    {
+      "id": "sanctuary-02",
+      "code": "SANCTUAIRE 02 // SUKI",
+      "title": "Shishō-an (l’assemblage du charpentier sukiya)",
+      "body": "Un assemblage de bois sans un seul clou métallique, et l’asymétrie d’une structure de bois courbés. Par l’anatomie d’un espace qui s’accorde aux arbres naturellement courbés, l’obsession de perfection linéaire et occidentale est libérée.",
+      "image": "/images/sanctuary02-suki.jpg",
+      "imageAlt": "Détail d’assemblage d’une salle de thé sukiya",
+      "badge": "Immersion dans la lumière diffusée",
+      "detailSlug": "shisho-an"
+    },
+    {
+      "id": "sanctuary-03",
+      "code": "SANCTUAIRE 03 // AMBIANT",
+      "title": "Sumiya Ryokan « Gyokuto-an »",
+      "body": "La modulation lumineuse de l’« Éloge de l’ombre ». En posant le corps dans la pénombre et la lumière diffusée qui traversent le shōji, l’obsession de la visibilité fond. Les frontières entre espace et corps se dissolvent : un repos ambiant.",
+      "image": "/images/sanctuary03-ryokan.jpg",
+      "imageAlt": "Lumière filtrée par le shōji dans une chambre de ryokan",
+      "badge": "1 nuit, occupation exclusive // 1 000 000 ¥",
+      "detailSlug": "sumiya-ryokan"
+    }
+  ],
+  "accreditation": {
+    "eyebrow": "Registre des mécènes",
+    "title": "Registre des mécènes — Diagnostic initial",
+    "body": "Douze couples par an, strictement. Afin de préserver la dignité des sanctuaires de Kyoto et de leurs maîtres, une présélection complète est appliquée. Nous n’acceptons pas la vente d’un voyage, mais un contrat de conseil en propriété intellectuelle et d’accompagnement sur site (honoraire forfaitaire).",
+    "form": {
+      "title": "Nomination scellée et reçue",
+      "description": "L’examen de recevabilité débutera.",
+      "fields": [
+        {
+          "name": "designation",
+          "label": "Désignation du mécène et titre",
+          "placeholder": "ex. Lord / Dr Julian Vance, fondateur",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "dispatch",
+          "label": "Canal d’envoi confidentiel",
+          "placeholder": "consular-archive@familyoffice.org",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "season",
+          "label": "Saison envisagée (72 pentades)",
+          "placeholder": "ex. Lichun / début février",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "lineage",
+          "label": "Vecteur de lignée culturelle",
+          "placeholder": "ex. Chanoyu / grès Bizen / lame",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "armor",
+          "label": "Nature de l’armure (poids actuel, pressions de décision, questions)",
+          "placeholder": "Décrivez les pressions de résultat et les doutes de décision (l’armure) que vous souhaitez déposer dans le silence de Kyoto...",
+          "required": true,
+          "type": "textarea"
+        }
+      ],
+      "protocolText": "J’accepte le Protocole du Silence : maintien d’une zone de sécurité absolue sans exigence de résultat, coupure numérique totale, et non-ingérence envers le patrimoine et les maîtres des lieux.",
+      "submitLabel": "Transmettre la nomination"
+    }
+  }
+}

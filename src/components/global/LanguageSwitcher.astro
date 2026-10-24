@@ -1,0 +1,49 @@
+---
+/**
+ * 言語切替 UI
+ * 現在のパスを保ったまま別ロケールへリンクする。
+ */
+import { locales, localeShort, localeNames, defaultLocale, type Locale } from '../../i18n';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+
+const currentPath = Astro.url.pathname + Astro.url.hash;
+
+function switchTo(target: Locale): string {
+  const [pathPart, hash = ''] = currentPath.split('#');
+  const hashSuffix = hash ? `#${hash}` : '';
+  const segments = pathPart.split('/').filter(Boolean);
+  const known = ['en', 'ja', 'fr'];
+  if (segments.length > 0 && known.includes(segments[0])) segments.shift();
+  const rest = segments.join('/');
+  const base = target === defaultLocale ? '/' : `/${target}/`;
+  return rest ? `${base}${rest}${hashSuffix}` : `${base}${hashSuffix}`;
+}
+---
+
+<div class="flex items-center gap-1 font-sans text-[11px] tracking-[0.18em]">
+  {
+    locales.map((loc, i) => (
+      <>
+        {i > 0 && <span class="text-outline-variant">/</span>}
+        <a
+          href={switchTo(loc)}
+          class:list={[
+            'transition-colors',
+            loc === lang
+              ? 'text-primary font-semibold'
+              : 'text-on-surface-variant hover:text-primary',
+          ]}
+          hreflang={loc}
+          aria-current={loc === lang ? 'true' : undefined}
+          title={localeNames[loc]}
+        >
+          {localeShort[loc]}
+        </a>
+      </>
+    ))
+  }
+</div>

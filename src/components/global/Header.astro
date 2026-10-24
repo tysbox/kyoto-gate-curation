@@ -1,0 +1,120 @@
+---
+/**
+ * 固定ヘッダー
+ * - デスクトップ: 横並びナビ + 言語切替 + CTA
+ * - モバイル(<1280px): ハンバーガー + ドロワー
+ */
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { loadGlobalSettings, getUI, localizedHref, type Locale } from '../../i18n';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const settings = loadGlobalSettings(lang);
+const ui = getUI(lang);
+const nav = settings?.nav ?? [];
+---
+
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/30"
+>
+  <div
+    class="h-20 max-w-container mx-auto px-6 lg:px-16 flex items-center justify-between gap-4"
+  >
+    <a class="group flex flex-col min-w-0" href={localizedHref(lang, '/')}>
+      <span
+        class="font-display text-xl sm:text-2xl tracking-widest uppercase transition-colors group-hover:text-primary flex items-center gap-2 truncate"
+      >
+        {settings?.logoText ?? 'KYOTO GATEWAY'}
+        {
+          settings?.tagline && (
+            <span
+              class="text-[12px] font-serif font-light tracking-[0.3em] text-secondary/80 hidden sm:inline"
+              lang="ja"
+            >
+              {settings.tagline}
+            </span>
+          )
+        }
+      </span>
+      <span
+        class="font-sans text-[10px] sm:text-[11px] text-on-surface-variant tracking-[0.24em] uppercase mt-0.5 truncate"
+      >
+        {settings?.logoSubtext ?? ''}
+      </span>
+    </a>
+
+    <nav
+      class="hidden xl:flex items-center gap-6 2xl:gap-10 font-sans text-xs uppercase tracking-[0.18em]"
+    >
+      {
+        nav.map((item) => (
+          <a
+            class="text-on-surface-variant hover:text-on-surface transition-colors py-2"
+            href={localizedHref(lang, item.href)}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3 sm:gap-5">
+      <LanguageSwitcher lang={lang} />
+      <a
+        class="hidden sm:inline-flex items-center justify-center font-sans text-xs uppercase tracking-[0.18em] px-4 lg:px-6 py-2.5 bg-primary text-on-primary hover:bg-primary/90 transition-all border border-secondary/30 shadow-sm whitespace-nowrap"
+        href={localizedHref(lang, '#accreditation-form')}
+      >
+        {ui.cta}
+      </a>
+      <button
+        class="nav-toggle xl:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-primary"
+        id="nav-toggle-btn"
+        type="button"
+        aria-label={ui.menuLabel}
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- モバイルドロワー -->
+  <nav class="nav-drawer xl:hidden" id="nav-drawer" data-open="false" aria-label={ui.menuLabel}>
+    {
+      nav.map((item) => (
+        <a href={localizedHref(lang, item.href)}>{item.label}</a>
+      ))
+    }
+    <a href={localizedHref(lang, '#accreditation-form')} class="font-semibold">{ui.cta}</a>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('nav-toggle-btn');
+  const drawer = document.getElementById('nav-drawer');
+  if (btn && drawer) {
+    const setOpen = (open: boolean) => {
+      drawer.setAttribute('data-open', open ? 'true' : 'false');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(drawer.getAttribute('data-open') !== 'true');
+    });
+    drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('click', (e) => {
+      const t = e.target as Node;
+      if (drawer.getAttribute('data-open') === 'true' && !drawer.contains(t) && !btn.contains(t)) {
+        setOpen(false);
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  }
+</script>

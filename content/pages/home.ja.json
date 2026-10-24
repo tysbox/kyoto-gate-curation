@@ -1,0 +1,196 @@
+{
+  "title": "KYOTO GATEWAY — 素の盤面への案内",
+  "description": "世界で最も重圧を受ける知性のための、急がない旅。商業ツアーではなく、指導者の防衛の鎧が絶対的な現在へと融解する聖なる閾口。",
+  "nav": [
+    {
+      "label": "構想定理",
+      "href": "#manifesto"
+    },
+    {
+      "label": "聖域（禅・数寄）",
+      "href": "#sanctuaries"
+    },
+    {
+      "label": "生ける工房（工芸）",
+      "href": "#ateliers"
+    },
+    {
+      "label": "食",
+      "href": "#gastronomy"
+    },
+    {
+      "label": "パトロネージ（100%直納）",
+      "href": "#accreditation"
+    }
+  ],
+  "hero": {
+    "eyebrow": "第一章 — 虚の建築 — 素の盤面",
+    "title": "静けさが建築となり、時間が進むことをやめる場所。",
+    "subtitle": "世界で最も重圧を受ける知性のための、急がない旅。商業ツアーではなく、指導者の防衛の鎧が絶対的な現在へと融解する聖なる閾口。",
+    "ctaText": "事前診立て",
+    "ctaHref": "#accreditation-form",
+    "image": "/images/hero.jpg",
+    "imageAlt": "杉と霧に囲まれた京都の聖域へのアプローチ",
+    "verticalText": "無門・素の盤面",
+    "obiText": "聖域の音響：14デシベルの静寂"
+  },
+  "manifesto": {
+    "eyebrow": "核心命題 — 二重荷下ろしの逆説",
+    "title": "不全の受容：侘び寂びの錬金術",
+    "quote": "「聖域は薄い縁によって開かれるのではない。自らの鎧を外す術を知る少数の人々を集める。」",
+    "body": "現代リーダーの過酷な病理——KPIの強迫観念と過剰なコントロール欲を、京都千年の精神文化（禅・数寄・工芸・食）を触媒として解除する。中間業者の30〜50%搾取を完全排除し、対価の100%を社寺・名工へ直接納入することで、顧客は消費者を脱し「文化の真のパトロン」へと昇華します。",
+    "metrics": [
+      {
+        "value": "12",
+        "label": "年間受入組数",
+        "note": "年間12組厳格限定"
+      },
+      {
+        "value": "100",
+        "unit": "%",
+        "label": "直接文化還元率",
+        "note": "中間搾取ゼロ・全額直納"
+      },
+      {
+        "value": "45",
+        "unit": "分",
+        "label": "事前診立て",
+        "note": "伴走者との事前診立て"
+      }
+    ]
+  },
+  "plates": [
+    {
+      "id": "ateliers",
+      "code": "プレート01 // 生きる名工",
+      "kicker": "ウルシオール化学と刀鍛造",
+      "title": "不全の受容：侘び寂びの錬金術",
+      "body": "130工程を経て撫でるほどに深まる開化堂の茶筒。割れや破損を黄金で肯定し、不完全さを不朽の美へと昇華させる表望堂の金継ぎ（ウルシオール化学）。そして一振り650万円の作刀鍛造没入（淺野鍛冶屋）。完璧主義の呪縛を解き、超長期の時間軸へと身を委ねる触媒。",
+      "image": "/images/plate01-crafts.jpg",
+      "imageAlt": "漆塗りの茶筒を仕上げる職人の手",
+      "badgeTop": "登録：淺野鍛冶屋 / 表望堂 / 開化堂",
+      "badgeBottom": "ウルシオール樹脂 // 100年熟成",
+      "specs": [
+        {
+          "label": "契約資産",
+          "value": "開化堂茶筒 / 表望堂金継ぎ"
+        },
+        {
+          "label": "感覚的衝撃",
+          "value": "時間減速"
+        }
+      ],
+      "cta": {
+        "label": "工芸を探る",
+        "href": "#accreditation-form"
+      },
+      "detailSlug": "living-masters"
+    },
+    {
+      "id": "gastronomy",
+      "code": "プレート02 // 分子生態",
+      "kicker": "瓢亭400年",
+      "title": "批評する心を逸らす：八重の旨味",
+      "body": "瓢亭の400年培われた出汁。京都の軟水が引き出すグルタミン酸×イノシン酸の相乗効果は、口に含んだ瞬間に頭脳による品評・分析的思考を強制シャットダウンさせます。味覚と身体細胞が自然と一体化する主客未分の生命観。",
+      "image": "/images/plate02-gastronomy.jpg",
+      "imageAlt": "瓢亭の料理人が季節の懐石を盛り付ける様子",
+      "badgeTop": "儀式資産：瓢亭400年",
+      "badgeBottom": "桃山備前石物 // 松灰釉",
+      "specs": [
+        {
+          "label": "契約資産",
+          "value": "瓢亭茅葺茶室"
+        },
+        {
+          "label": "感覚的衝撃",
+          "value": "即時の非知性化"
+        }
+      ],
+      "cta": {
+        "label": "食を探る",
+        "href": "#accreditation-form"
+      },
+      "detailSlug": "molecular-ecology"
+    }
+  ],
+  "sanctuaries": [
+    {
+      "id": "sanctuary-01",
+      "code": "聖域01 // 禅",
+      "title": "仁和寺「松林庵」＆退蔵院",
+      "body": "1泊100万円での世界遺産夜間無人独占。風と虫の音だけに包まれる絶対的安全圏。ロジックが通用しない禅問答に直面し、頭の計算機を強制停止させる「大死一番」の実存体験。",
+      "image": "/images/sanctuary01-zen.jpg",
+      "imageAlt": "仁和寺の静かな枯山水庭園",
+      "badge": "非直交の数寄空間",
+      "detailSlug": "ninna-ji-shorin-an"
+    },
+    {
+      "id": "sanctuary-02",
+      "code": "聖域02 // 数寄",
+      "title": "紫匠庵（数寄屋大工の仕口）",
+      "body": "金属釘を一本も使わない木組みと変木構造の非対称性。自然の曲がり木と同調する空間解剖を通じて、直線的・西洋的な完全主義の強迫観念を解き放つ。",
+      "image": "/images/sanctuary02-suki.jpg",
+      "imageAlt": "数寄屋茶室の継手の詳細",
+      "badge": "拡散光への沈浸",
+      "detailSlug": "shisho-an"
+    },
+    {
+      "id": "sanctuary-03",
+      "code": "聖域03 // アンビエント",
+      "title": "炭屋旅館「玉兎庵」",
+      "body": "『陰翳礼讃』の光調律。障子を透過する薄暗がりと拡散光の中に身を置くことで、目立つことへの強迫観念を融解。空間と身体の境界が溶け合うアンビエントな安息。",
+      "image": "/images/sanctuary03-ryokan.jpg",
+      "imageAlt": "旅館の一室に差す障子越しの光",
+      "badge": "1泊単独占有 // ¥1,000,000",
+      "detailSlug": "sumiya-ryokan"
+    }
+  ],
+  "accreditation": {
+    "eyebrow": "パトロン登録",
+    "title": "パトロン登録 — 事前診立て",
+    "body": "年間12組厳格限定。京都の聖域と当主の尊厳を守るため、完全事前審査制をとっております。旅行手配の販売ではなく、知財コンサルティングおよび現場伴走の受託契約（定額フィー）として受任いたします。",
+    "form": {
+      "title": "推薦を受け付けました",
+      "description": "受任審査を開始いたします。",
+      "fields": [
+        {
+          "name": "designation",
+          "label": "パトロン称号・役職",
+          "placeholder": "例：ジュリアン・ヴァンス卿 / 創設者",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "dispatch",
+          "label": "機密連絡経路",
+          "placeholder": "consular-archive@familyoffice.org",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "season",
+          "label": "希望する季節（七十二候）",
+          "placeholder": "例：立春 / 2月初旬",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "lineage",
+          "label": "文化的系譜の方向性",
+          "placeholder": "例：茶の湯 / 備前焼 / 刀剣",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "armor",
+          "label": "鎧の性質（現在の重圧、判断の困難さ、問い）",
+          "placeholder": "どのような成果主義の重圧や判断の迷い（鎧）を今回の京都の静寂で降ろしたいかをご記入ください...",
+          "required": true,
+          "type": "textarea"
+        }
+      ],
+      "protocolText": "静寂のプロトコルに同意します：成果や評価の一切を問わない絶対的安全圏の維持、デジタル機器の完全遮断、および文化財・当主の尊厳に対する不干渉。",
+      "submitLabel": "推薦状を送信する"
+    }
+  }
+}

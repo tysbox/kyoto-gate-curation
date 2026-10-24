@@ -1,0 +1,123 @@
+fragment PageParts on Page {
+  __typename
+  title
+  description
+  nav {
+    __typename
+    label
+    href
+  }
+  hero {
+    __typename
+    eyebrow
+    title
+    subtitle
+    ctaText
+    ctaHref
+    image
+    imageAlt
+    verticalText
+    obiText
+  }
+  manifesto {
+    __typename
+    eyebrow
+    title
+    quote
+    body
+    metrics {
+      __typename
+      value
+      unit
+      label
+      note
+    }
+  }
+  plates {
+    __typename
+    id
+    code
+    kicker
+    title
+    body
+    image
+    imageAlt
+    badgeTop
+    badgeBottom
+    specs {
+      __typename
+      label
+      value
+    }
+    cta {
+      __typename
+      label
+      href
+    }
+    detailSlug
+  }
+  sanctuaries {
+    __typename
+    id
+    code
+    title
+    body
+    image
+    imageAlt
+    badge
+    detailSlug
+  }
+  accreditation {
+    __typename
+    eyebrow
+    title
+    quote
+    body
+    metrics {
+      __typename
+      value
+      unit
+      label
+      note
+    }
+    form {
+      __typename
+      title
+      description
+      fields {
+        __typename
+        name
+        label
+        placeholder
+        required
+        type
+      }
+      protocolText
+      submitLabel
+    }
+  }
+}
+
+fragment GlobalParts on Global {
+  __typename
+  siteName
+  logoText
+  logoSubtext
+  tagline
+  nav {
+    __typename
+    label
+    href
+  }
+  footer {
+    __typename
+    description
+    catalystsTitle
+    catalysts
+    patronageTitle
+    patronageBody
+    coordinates
+    rights
+    model
+  }
+}

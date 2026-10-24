@@ -1,0 +1,84 @@
+---
+/**
+ * ヒーローセクション
+ * フルブリードの背景画像 + 流体パディング(レスポンシブ)
+ */
+import { normalizeAssetPath, localizedHref, type Locale } from '../../i18n';
+import type { HeroContent } from '../../types';
+
+interface Props {
+  lang: Locale;
+  hero: HeroContent;
+}
+const { lang, hero } = Astro.props;
+---
+
+<section class="hero3 hero-shell relative overflow-hidden bg-background" id="hero">
+  <div class="hero3-img absolute inset-0">
+    <img
+      src={normalizeAssetPath(hero.image)}
+      alt={hero.imageAlt}
+      class="w-full h-full object-cover object-center hero-img-settle"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="sample-watermark">presentation sample</div>
+  </div>
+
+  <!-- 読み込み時のヴェール -->
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <!-- 左→右の可読性確保オーバーレイ -->
+  <div
+    class="absolute inset-0 z-1 pointer-events-none"
+    style="background:linear-gradient(90deg,rgba(248,246,242,.9) 0%,rgba(248,246,242,.6) 40%,rgba(248,246,242,0) 64%),linear-gradient(180deg,rgba(248,246,242,.75) 0%,rgba(248,246,242,0) 32%)"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="hero3-inner hero-pad relative z-2 max-w-container mx-auto">
+    <div class="hero2-eyebrow rise font-sans text-[11px] uppercase tracking-[0.28em] text-secondary" style="animation-delay:1.5s">
+      {hero.eyebrow}
+    </div>
+    <div class="gold-line" aria-hidden="true"></div>
+    <h1
+      class="ink-reveal font-display font-light text-on-surface max-w-[13em] mb-7"
+      style="font-size:clamp(2.2rem,5.2vw,5.2rem);line-height:1.14;letter-spacing:.005em"
+    >
+      {hero.title}
+    </h1>
+    <p
+      class="font-body font-light text-on-surface-variant max-w-[34rem] mb-8"
+      style="font-size:clamp(1rem,1.6vw,1.125rem);line-height:1.9"
+    >
+      {hero.subtitle}
+    </p>
+    <a
+      class="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.18em] px-6 py-3 bg-primary text-on-primary hover:bg-primary/90 transition-all border border-secondary/30 shadow-sm"
+      href={localizedHref(lang, hero.ctaHref)}
+    >
+      {hero.ctaText}
+    </a>
+  </div>
+
+  <!-- 右下の帯注記 -->
+  {
+    hero.obiText && (
+      <div class="hero3-obi absolute z-3 left-6 lg:left-16 bottom-6 lg:bottom-10 px-3.5 py-2.5 bg-surface/86 backdrop-blur-md font-sans text-[10px] lg:text-[11px] tracking-[0.2em] uppercase text-on-surface">
+        {hero.obiText}
+      </div>
+    )
+  }
+
+  <!-- 右側の縦組み -->
+  {
+    hero.verticalText && (
+      <div
+        class="hero3-vert hidden lg:block absolute z-3 right-12 top-[15vh] writing-vertical text-[1.1rem] tracking-[0.6em] text-secondary"
+        lang="ja"
+      >
+        {hero.verticalText}
+      </div>
+    )
+  }
+</section>

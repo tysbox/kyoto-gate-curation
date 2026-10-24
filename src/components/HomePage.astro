@@ -1,0 +1,60 @@
+---
+/**
+ * ホームページ本体
+ * ロケール別コンテンツを読み込み、各セクションを描画する。
+ */
+import MainLayout from '../layouts/MainLayout.astro';
+import HeroSection from './sections/HeroSection.astro';
+import ManifestoSection from './sections/ManifestoSection.astro';
+import PlateSection from './sections/PlateSection.astro';
+import SanctuarySection from './sections/SanctuarySection.astro';
+import AccreditationSection from './sections/AccreditationSection.astro';
+import { loadPageData, type Locale } from '../i18n';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const data = loadPageData(lang);
+---
+
+{
+  data ? (
+    <MainLayout lang={lang} title={data.title} description={data.description}>
+      <HeroSection lang={lang} hero={data.hero} />
+      <ManifestoSection lang={lang} manifesto={data.manifesto} />
+
+      <!-- Plate 01 / 02 (工芸・食) -->
+      <section
+        class="w-full bg-surface-container-low py-space-xl px-6 lg:px-16 relative border-t border-b border-outline-variant/30"
+        id="ateliers"
+      >
+        <div class="max-w-container mx-auto">
+          <div class="flex items-center justify-between mb-space-lg border-b border-outline-variant/30 pb-4 reveal-node">
+            <span class="font-sans text-xs uppercase tracking-[0.2em] text-secondary font-semibold">
+              Living Ateliers
+            </span>
+            <span class="hidden sm:flex items-center gap-2 text-on-surface-variant font-sans text-xs">
+              <span>REGISTER: 淺野鍛冶屋 / 表望堂 / 開化堂</span>
+            </span>
+          </div>
+
+          <div class="space-y-space-xl">
+            {data.plates.map((plate, i) => (
+              <PlateSection lang={lang} plate={plate} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SanctuarySection lang={lang} sanctuaries={data.sanctuaries} />
+      <AccreditationSection lang={lang} accreditation={data.accreditation} />
+    </MainLayout>
+  ) : (
+    <MainLayout lang={lang} title="KYOTO GATEWAY" description="">
+      <div class="py-space-xl px-6 text-center">
+        <p class="font-body text-on-surface-variant">Content not found.</p>
+      </div>
+    </MainLayout>
+  )
+}

@@ -1,0 +1,43 @@
+{
+  "siteName": "KYOTO GATEWAY",
+  "logoText": "KYOTO GATEWAY",
+  "logoSubtext": "Curating Your Passage to the Root Slate",
+  "tagline": "無門",
+  "nav": [
+    {
+      "label": "The Doctrine (構想定理)",
+      "href": "#manifesto"
+    },
+    {
+      "label": "Sanctuaries (禅・数寄)",
+      "href": "#sanctuaries"
+    },
+    {
+      "label": "Living Ateliers (工芸)",
+      "href": "#ateliers"
+    },
+    {
+      "label": "Gastronomy (食)",
+      "href": "#gastronomy"
+    },
+    {
+      "label": "Patronage (100% 直納)",
+      "href": "#accreditation"
+    }
+  ],
+  "footer": {
+    "description": "現代リーダーの心理的Threshold（防衛の鎧）を融解し、何のアプリも入っていない素の盤面（Root Slate）へと導くD2Cキュレーション事業。",
+    "catalystsTitle": "Four Core Catalysts",
+    "catalysts": [
+      "禅 (Zen) — 仁和寺「松林庵」・退蔵院",
+      "数寄 (Suki) — 紫匠庵・炭屋旅館「玉兎庵」",
+      "工芸 (Crafts) — 開化堂・表望堂・淺野鍛冶屋",
+      "食 (Gastronomy) — 瓢亭・精進料理"
+    ],
+    "patronageTitle": "Direct Cultural Patronage",
+    "patronageBody": "旅行会社の30〜50%中抜きを完全排除。全額が文化財修復と職人継承資金へ直接還流される透明なエコシステム。",
+    "coordinates": "35°00′42″N 135°46′05″E // HIGASHIYAMA REGION",
+    "rights": "© 2026 KYOTO GATEWAY. STRICTLY PRIVATE CLIENT & PARTNER MONOGRAPH.",
+    "model": "DIRECT-TO-CONSUMER BESPOKE CURATION & PSYCHOLOGICAL DECOUPLING"
+  }
+}
