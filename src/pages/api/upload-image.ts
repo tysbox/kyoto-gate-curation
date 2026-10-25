@@ -2,7 +2,6 @@ import type { APIRoute } from 'astro';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// ローカル開発時はオンデマンドレンダリング(node アダプタ)。
 export const prerender = false;
 
 const ALLOWED_TYPES: Record<string, string> = {

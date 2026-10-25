@@ -2,8 +2,6 @@ import type { APIRoute } from 'astro';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// ローカル開発時はオンデマンドレンダリング(node アダプタ)。
-// Cloudflare ビルド時は静的化(functions/api/ が担当)。
 export const prerender = false;
 
 /**
