@@ -41,7 +41,7 @@ const data = loadPageData(lang);
 
           <div class="space-y-[var(--section-y)]">
             {data.plates.map((plate, i) => (
-              <PlateSection lang={lang} plate={plate} index={i} fullBleed={plate.id === 'gastronomy'} />
+              <PlateSection lang={lang} plate={plate} index={i} />
             ))}
           </div>
         </div>
