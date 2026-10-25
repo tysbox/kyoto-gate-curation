@@ -10,7 +10,11 @@ import tailwindcss from '@tailwindcss/vite';
 //
 // Astro 5+ removed `output: 'hybrid'`; `'static'` now supports opting individual
 // routes out of prerendering via `export const prerender = false`.
-const isCloudflare = process.env.BUILD_TARGET === 'cloudflare';
+// Cloudflare Pages 判定: BUILD_TARGET=cloudflare が明示されているか、
+// Cloudflare Pages のビルド環境 (CF_PAGES=1) で実行されている場合。
+// どちらでもない場合のみ node アダプタ (ローカル preview 用) を適用する。
+const isCloudflare =
+  process.env.BUILD_TARGET === 'cloudflare' || process.env.CF_PAGES === '1';
 
 export default defineConfig({
   output: 'static',

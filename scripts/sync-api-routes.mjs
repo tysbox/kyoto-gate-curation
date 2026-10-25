@@ -13,7 +13,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const isCloudflare = process.env.BUILD_TARGET === 'cloudflare';
+const isCloudflare =
+  process.env.BUILD_TARGET === 'cloudflare' || process.env.CF_PAGES === '1';
 const srcApi = path.resolve('src/api');
 const dstApi = path.resolve('src/pages/api');
 

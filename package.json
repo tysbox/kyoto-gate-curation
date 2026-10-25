@@ -10,7 +10,7 @@
     "dev": "astro dev --host 127.0.0.1 --port 4321",
     "edit": "npm run tina:dev",
     "tina:dev": "tinacms dev -c \"astro dev --host 127.0.0.1 --port 4321\"",
-    "build": "astro build",
+    "build": "node scripts/sync-api-routes.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
