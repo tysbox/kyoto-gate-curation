@@ -80,9 +80,11 @@ const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detai
       plate.specs && plate.specs.length > 0 && (
         <div class="mt-space-xl">
           {plate.specs.map((s) => (
-            <div class="flex justify-between items-center gap-4 text-xs font-sans py-3 border-t border-[var(--hairline)]">
-              <span class="uppercase tracking-[0.22em] text-on-surface-variant font-normal">{s.label}</span>
-              <span class="text-on-surface text-right">{s.value}</span>
+            <div class="flex flex-col gap-1 py-3 border-t border-[var(--hairline)]">
+              <span class="font-sans text-[11px] uppercase tracking-[0.22em] text-on-surface-variant font-normal">
+                {s.label}
+              </span>
+              <span class="font-body text-sm text-on-surface">{s.value}</span>
             </div>
           ))}
         </div>
