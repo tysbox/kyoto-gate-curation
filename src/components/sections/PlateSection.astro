@@ -14,13 +14,13 @@ interface Props {
   index: number;
 }
 const { lang, plate, index } = Astro.props;
-const ui = getUI(lang);
 const imageFirst = index % 2 === 0;
+const ui = getUI(lang);
 const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detailSlug}`) : null;
 ---
 
 <div
-  class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center reveal-node"
+  class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch reveal-node"
   id={plate.id}
 >
   <!-- 画像 -->
@@ -32,7 +32,7 @@ const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detai
   >
     <div>
       <div
-        class="w-full aspect-[16/10] overflow-hidden bg-surface-dim relative gilded-frame photo-mask"
+        class="w-full aspect-[4/3] overflow-hidden bg-surface-dim relative gilded-frame photo-mask"
       >
         <div
           class="w-full h-full bg-cover bg-center photo-zoom"
@@ -56,8 +56,8 @@ const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detai
   <!-- テキスト -->
   <div
     class:list={[
-      'lg:col-span-4 flex flex-col justify-center',
-      imageFirst ? 'lg:pl-space-md mt-space-md lg:mt-0' : 'lg:pr-space-md order-2 lg:order-1',
+      'lg:col-span-4 relative flex flex-col justify-center',
+      imageFirst ? 'order-2 lg:pl-space-md mt-space-md lg:mt-0' : 'order-1 lg:order-1 lg:pr-space-md mt-space-md lg:mt-0',
     ]}
   >
     <div class="mb-space-xs">
@@ -72,13 +72,13 @@ const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detai
 
     <div class="w-12 h-[1px] bg-secondary mb-space-md"></div>
 
-    <p class="font-body text-[15px] text-on-surface-variant leading-[2] mb-space-md">
+    <p class="font-body text-[15px] text-on-surface-variant leading-[2]">
       {plate.body}
     </p>
 
     {
       plate.specs && plate.specs.length > 0 && (
-        <div class="mb-space-md">
+        <div class="mt-space-xl">
           {plate.specs.map((s) => (
             <div class="flex justify-between items-center gap-4 text-xs font-sans py-3 border-t border-[var(--hairline)]">
               <span class="uppercase tracking-[0.22em] text-on-surface-variant font-normal">{s.label}</span>
@@ -89,7 +89,10 @@ const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detai
       )
     }
 
-    <div class="flex flex-wrap items-center gap-4">
+
+  </div>
+
+    <div class="col-span-12 order-3 flex flex-wrap items-center justify-center gap-4 mt-space-lg">
       {
         plate.cta && (
           <a
@@ -117,5 +120,4 @@ const detailHref = plate.detailSlug ? localizedHref(lang, `/plates/${plate.detai
         )
       }
     </div>
-  </div>
 </div>
